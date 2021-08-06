@@ -1,0 +1,38 @@
+31. Passing and using data with Event Binding
+
+* $event is a kind of reserved variable name. We could use this in the template when we are using Event binding.
+* Simply saying, we use '$event' to fetch the event data.
+
+
+Code Snippet:
+
+warning.component.html:
+=======================
+<h3>{{warningMessage}} Handle carefully</h3>
+
+<input type="text" class="form-control" (input)="updateWarningData($event)" />
+{{warningData}}
+
+
+
+warning.component.ts
+=====================
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-warning',
+  templateUrl: './warning.component.html',
+  styleUrls: ['./warning.component.css']
+})
+export class WarningComponent {
+  warningMessage = "Warning!";
+  warningData = '';
+
+
+  updateWarningData(event: InputEvent) {
+    console.log(event);
+    this.warningData = (<HTMLInputElement>event.target).value;
+  }
+}
+
+

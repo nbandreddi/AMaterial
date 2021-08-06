@@ -1,0 +1,75 @@
+39. Styling Elements Dynamically with ngStyle
+
+
+* We know that 'ngIf' is structural directive.
+* Structural directives might add or remove elements.
+* Other type of directives are attribute directives.
+* Unlike Structural directives, attribute directives don't add or remove elements. They only change the element they were placed on.
+* ngStyle is directive.
+* ngStyle property expects to get JS object.
+* ngStyle allows us to dynamically update the styles.
+* In the below code, we are using property binding to configure 'ngStyle' attribute directive.
+* Example of ngStyle:
+
+user.component.html
+===================
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class= "form-control" [(ngModel)] = "userName"/>
+            <p>User Name:<b>{{userName}}</b></p>
+            <button class="btn btn-primary" [disabled]= "userName===''">Click Me</button>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="userName=''">Clear</button>
+            <br>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="serverName"/><br><br><br>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="createServer()" [disabled]="serverName ===''">Create Server</button>
+            <br><br><br>
+            <p *ngIf="isServerCreated; else noServer" [ngStyle]= {backgroundColor:getColor()}>
+                Server was created with Server name:{{serverName}} with the status:{{getServerStatus()}}</p>
+            <!-- <p *ngIf="!isServerCreated">Server not yet created..</p>
+             -->
+             <ng-template #noServer>
+                 <p>Server not created yet...</p>
+             </ng-template>
+        </div>
+    </div>
+</div>
+
+
+user.component.ts
+=================
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
+})
+export class UserComponent implements OnInit {
+
+  userName="";
+  isServerCreated = false;
+  serverName = "";
+  serverStatus = "";
+  constructor() {
+    this.serverStatus = Math.random() >0.5 ? "Online": "Offline";
+  }
+
+  ngOnInit(): void {
+  }
+
+  createServer(){
+    this.isServerCreated = true;
+    this.serverName = this.serverName;
+  }
+
+  getServerStatus(){
+    return this.serverStatus;
+  }
+
+  getColor(){
+    return this.serverStatus === 'Online'? 'Green' : 'pink';
+  }
+}

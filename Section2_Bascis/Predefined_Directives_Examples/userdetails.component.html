@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <!-- <button class="btn btn-info" (click)="secretPhraseStatus = !secretPhraseStatus">Display/Hide Secret -->
+            <!-- Details</button> -->
+            <button class="btn btn-info" (click)="onToggle()">Display/Hide Secret
+                Details</button>
+            <br>
+            <p *ngIf="secretPhraseStatus">Secret Password = tuna</p><br><br>
+
+            <div *ngFor="let logButtonClickEvent of logButtonClickEvents; let i=index;" 
+                [ngStyle]="{backgroundColor: i>=4 ? 'green' : 'blue' }" [ngClass]="{'white-text':i<=4}">
+                Number of button clicks:{{logButtonClickEvent}}
+            </div>
+        </div>
+    </div>
+</div>

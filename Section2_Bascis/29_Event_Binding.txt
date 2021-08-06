@@ -1,0 +1,51 @@
+29. Event Binding
+
+success.component.ts
+====================
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-success',
+  templateUrl: './success.component.html',
+  styles: [`h2{
+    color:grey
+  }`]
+})
+export class SuccessComponent implements OnInit {
+
+  enableClickButton = false;
+  successMessage = "Success!";
+  status = 'Not successful yet';
+
+  constructor() {
+    setTimeout(() => {
+      this.enableClickButton = true;
+    }, 2000);
+  }
+
+  ngOnInit(): void {
+  }
+
+  onSuccess() {
+    this.status = 'Successful';
+  }
+
+}
+
+success.component.html
+======================
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <app-warning></app-warning>
+            <h2> {{ successMessage}}</h2>
+            <app-warning></app-warning>
+            <button class="btn btn-primary" [disabled]="!enableClickButton" (click)="onSuccess()">Click</button>
+            <!-- <p>{{enableClickButton}}</p> String interpolation -->
+            <!-- <p [innerText]="!enableClickButton"></p> -->
+            <p>{{ status }}</p>
+        </div>
+    </div>
+</div>

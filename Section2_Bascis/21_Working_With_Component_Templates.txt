@@ -1,0 +1,13 @@
+21. Working with Component Templates
+
+* We have seen that we are putting template in HTML file like 'server.component.html' / 'servers.component.html'.
+* Instead of using the external template file, we could also use inline template. It means defining HTML code in the TS code.
+We could do this by goint to 'server.component.ts' / servers.component.ts' files.
+* In the '@Component' decorator, one of the properties either templateUrl or template must be there.
+template 	- we use this for providing inline template
+templateUrl - we use this for providing external template.
+* If we have more than 3 lines of code in the 'template', it's preffered to use 'templateUrl'. It means using external file is a good idea. If we use external file it's easier to follow & easier to understand.
+
+Note: 
+* In '@Component' decorator, we could omit 'selector' & 'styleUrls'. But we could not omit 'template'/'templateUrl'.
+* Either 'template' or 'templateUrl' is mandatory.

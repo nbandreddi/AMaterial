@@ -1,0 +1,22 @@
+Selector:
+=========
+
+The CSS selector that identifies this directive in a template and triggers instantiation of the directive.
+
+Declare as one of the following:
+
+element-name: Select by element name.
+.class: Select by class name.
+[attribute]: Select by attribute name.
+[attribute=value]: Select by attribute name and value.
+:not(sub_selector): Select only if the element does not match the sub_selector.
+selector1, selector2: Select if either selector1 or selector2 matches.
+
+Angular only allows directives to apply on CSS selectors that do not cross element boundaries.
+
+For the following template HTML, a directive with an input[type=text] selector, would be instantiated only on the <input type="text"> element.
+
+<form>
+  <input type="text">
+  <input type="radio">
+<form>

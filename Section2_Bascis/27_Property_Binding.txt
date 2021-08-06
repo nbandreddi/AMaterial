@@ -1,0 +1,53 @@
+27. Property Binding
+
+
+success.component.ts
+====================
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-success',
+  templateUrl: './success.component.html',
+  styles: [`h2{
+    color:grey
+  }`]
+})
+
+export class SuccessComponent implements OnInit {
+
+  enableClickButton = false;
+  successMessage = "Success!";
+
+  constructor() {
+    setTimeout(() => {
+      this.enableClickButton = true;
+    }, 2000);
+  }
+
+  ngOnInit(): void {
+  }
+
+}
+
+success.component.html
+======================
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <app-warning></app-warning>
+            <h2> {{ successMessage}}</h2>
+            <app-warning></app-warning>
+            <button class="btn btn-primary" [disabled] = "!enableClickButton">Click</button>
+        </div>
+    </div>
+</div>
+
+
+* Native element property 'disabled' is bounded to Type script property 'enableClickButton'.
+* Why we use Angular ?
+	- It makes very easy for us to interact with the DOM to chanage something at runtime. 
+* Besides binding to HTML properties like 'disabled',we could also use directives & our own components.
+
+

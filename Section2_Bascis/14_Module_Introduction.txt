@@ -1,0 +1,6 @@
+14) Module Introduction
+
+* How an Angular app gets started in the first place.
+* Which basic building blocks it offers us.
+* To build Angular apps which features we use
+* What happens when we reload the page.

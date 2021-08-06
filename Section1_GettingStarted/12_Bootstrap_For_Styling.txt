@@ -1,0 +1,21 @@
+12. A Basic Project Setup using Bootstrap for Styling:
+
+* Install bootstrap using the below command.
+
+> npm install --save bootstrap@3
+
+* After installing bootstrap, go to 'angular.json' file and provide the below path in the 'styles' section.
+
+Path: 
+node_modules/bootstrap/dist/css/bootstrap.min.css
+
+* After adding the above path in the 'angular.json' file, save the file & run the below command to load the new configuration.
+
+> ng serve
+
+* Open developer tools, goto 'Elements' tab, check <head> section where we could see 
+<link rel="stylesheet" href="styles.css">
+* In developer tools, goto 'Sources' tab & open 'styles.css' & check the bootstrap version.
+
+
+One important note: All the course code will only work if you are NOT using "strict mode" see the "First App" lecture in this module. Strict mode forces you to write more verbose code in some places (especially when it comes to class properties). If you enabled it by accident, you can also disable it by setting strict: false in your tsconfig.json file.

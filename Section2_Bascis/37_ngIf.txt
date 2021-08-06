@@ -1,0 +1,46 @@
+37) Using ngIf to Output data conditionally
+
+
+Example of 'ngIf':
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class= "form-control" [(ngModel)] = "userName"/>
+            <p>User Name:<b>{{userName}}</b></p>
+            <button class="btn btn-primary" [disabled]= "userName===''">Click Me</button>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="userName=''">Clear</button>
+            <br>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="serverName"/><br><br><br>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="createServer()" [disabled]="serverName ===''">Create Server</button>
+            <br><br><br>
+            <p *ngIf="isServerCreated">Server was created with Server name:{{serverName}}</p>
+            <p *ngIf="!isServerCreated">Server not yet created..</p>
+        </div>
+    </div>
+</div>
+
+* Using 'Local references'
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class= "form-control" [(ngModel)] = "userName"/>
+            <p>User Name:<b>{{userName}}</b></p>
+            <button class="btn btn-primary" [disabled]= "userName===''">Click Me</button>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="userName=''">Clear</button>
+            <br>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="serverName"/><br><br><br>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="createServer()" [disabled]="serverName ===''">Create Server</button>
+            <br><br><br>
+            <p *ngIf="isServerCreated; else noServer">Server was created with Server name:{{serverName}}</p>
+            <!-- <p *ngIf="!isServerCreated">Server not yet created..</p>
+             -->
+             <ng-template #noServer>
+                 <p>Server not created yet...</p>
+             </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+7.Editing the First App
+########################
+
+* The default config does the job, we don't need to edit any of the files.
+* Angular is split up into multiple modules.
+* In 'app.module.ts' we specify Angular modules required for this application.

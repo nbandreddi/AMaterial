@@ -1,0 +1,20 @@
+45) Planning the app
+
+* We are planning a new app that we are going to implement through out this course.
+
+* Features
+	- Shopping List
+	- Recipe Book
+	
+* Components
+	- Root
+	- Header
+	- ShoppingList
+	- ShoppingListEdit
+	- RecipeList
+	- RecipeItem
+	- RecipeDetail
+	
+* Model
+	- Ingredient
+	- Recipe

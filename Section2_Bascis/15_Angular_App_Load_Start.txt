@@ -1,0 +1,77 @@
+15. How an Angular App gets started & loaded
+
+* http://localhost:4200 , this is where our development server hosted by CLI or spun up by CLI will host our Angular application.
+
+* We have added the below line in the 'app.component.html'
+
+<h3>It's so much fun to learn Angular</h3>
+
+
+When we make changes to app.component.html file, how does the server hosting our app know that it should render the content of 'app.component.html'
+Actually, 'app.component.html' file is not the one served by the server instead server served the 'index.html' file.
+
+If we see 'index.html', we may come across one custom html element '<app-root>'.
+<app-root> is one of the Angular component. This component is created by CLI.
+We could create our own components. But CLI created one for us that is root component of our application.
+
+app.component.ts
+================
+* This file has @Component decorator. It has one of the properties 'selector' it's value is 'app-root'
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+}
+
+* We could see that 'app-root' is the element in 'index.html'
+* This <app-root> element will be replaced with the template of app.component
+* main.ts is the first file that gets executed where we mention bootstrapModule. Here bootstrapModule is 'AppModule', hence app.module.ts will be executed.
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+  
+* app.module.ts has '@NgModule' it has property called 'bootstrap'.
+
+* '@NgModule' : Decorator that marks a class as an NgModule and supplies configuration metadata.
+
+* '@NgModule' decorator supplies below configuration metadata.
+
+	- declarations
+	- imports
+	- providers
+	- bootstrap
+
+* 'app.module.ts' file has '@NgModule' decorator.
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { WarningComponent } from './warning/warning.component';
+import { SuccessComponent } from './success/success.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    WarningComponent,
+    SuccessComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+* bootstrap: [AppComponent], which basically lists all the components which should be known to Angular at the point of time it analyzed 'index.html' file.
+
+* When Angular application is loaded, it first executes 'main.ts' file from there it gets bootstrapModule 'AppModule'. Based on 'AppModule' it executes 'app.module.ts' file, this file has a property called 'bootstrap' & based on it's value(s) it executes the 'app.component.ts' file. Angular analyzes 'app.component.ts' file and it knows the 'selector' as 'app-root'. Now Angular is able to handle 'app-root' in the 'index.html' file. It should know that it should inject the AppComponent & AppComponent happens to have some template (app.component.html) attached to it which is <h3> tag. This is how Angular application starts.

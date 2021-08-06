@@ -1,0 +1,10 @@
+48) Creating the Components
+
+* A component is nothing but a Type script class.
+* Even if you define a component, that will not be recognized by Angular.
+* Just to recognize any new component defined by us, we have to add a decorator '@Component'.
+* To use this decorator '@Component', we have to import 'Component'  from '@angular/core'
+* Now configure the metadata inside the @Component,
+	- selector
+	- templateUrl / template
+	- styleUrls /styles

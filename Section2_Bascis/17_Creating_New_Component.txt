@@ -1,0 +1,20 @@
+17.Creating a New Component
+
+* If we create a new component their selectors will not be added to 'index.html' file.
+* New component selectors will be added to 'app.component.html' file.
+* A component is just a TS class so that Angular is able to instantiate it to create objects based on the blueprint we set up here in the 'server.component.ts' file.
+	Lets say we are creating a custom component,
+	server.component.ts
+	
+* The file server.component.ts will be having a class.
+* Lets export this class to use that outside of the class becasue we are going to use our component with AppComponent
+* @Component is a decorator.
+* Decarators are type script features which allow us to enhance classes/ enhance elements that we use in our code.
+* If we want to use decorators in our application, we need to import the component from '@angular/core'
+* @Component decorator known to TS, when it parses TS file & compiles to JS.
+* Now we need to pass JS object to this @Component decorator.
+* In @Component, we could set up some important inforamtion which would be stored as metadata for this class in the background, which will tell Angular what to do with this class.
+* 'selector' value should be in string. 
+* Make sure 'selector' value is unique from commponent to commponent.
+* We need to provided relative path for 'templateUrl'.
+* Once our new component is ready we need to configure that new component inside 'app.module.ts' file.

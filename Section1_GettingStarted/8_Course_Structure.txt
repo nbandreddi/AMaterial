@@ -1,0 +1,14 @@
+8.The Course Structure:
+
+* The Basics
+* Components & Databinding
+* Directives
+* Service & Dependency Injection
+* Routing
+* Observables
+* Forms
+* Pipes
+* Http
+* Authentication
+* Optimizations & NgModules
+* Deployment

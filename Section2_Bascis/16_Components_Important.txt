@@ -1,0 +1,18 @@
+16. Components are Important !
+
+* Angular in the end is a JS Framework, changing your DOM ('HTML') at runtime.
+* Component is one of the very important features of Angular.
+* A web page could have multiple components. Lets say.
+	- Header (as component)
+		* It could have multiple other components like 'Home' button as one component, 'Users' as another component.
+	- Main area (as component)
+	- Side bar (as component)
+* Core idea of Angular is to build various components.
+* Each component has its own
+	- Template
+	- It's own HTML code
+	- It's own styling
+	- It's own business logic
+	
+* Component allows us to split up a complex application (or)  web page into reusable parts that allows us to replicate the business logic.
+* Instead of putting entire code into one single script file or one single HTMl file, it's very easy to update , very easy to exchange  and again reusable.
