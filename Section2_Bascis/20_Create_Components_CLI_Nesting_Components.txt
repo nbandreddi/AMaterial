@@ -1,0 +1,41 @@
+20. Creating Components with CLI & Nesting Components.
+
+* We will see how to create a new component using CLI & how to nest multiple commponents.
+* Use the below command to create a new component.
+
+D:\> ng generate component servers  (OR)
+
+D:\> ng g c servers
+
+PS D:\AJPractice\my-first-project> ng generate component servers 
+CREATE src/app/servers/servers.component.html (22 bytes)
+CREATE src/app/servers/servers.component.spec.ts (633 bytes) (Removing this file, we will learn more about when we learn Unit test cases)
+CREATE src/app/servers/servers.component.ts (279 bytes)     
+CREATE src/app/servers/servers.component.css (0 bytes)      
+UPDATE src/app/app.module.ts (624 bytes)
+PS D:\AJPractice\my-first-project> 
+	
+* And Angular CLI automatically adds new component to 'declartions' list of '@NgModule' decorator. Also it auto imports the new component.
+
+* Example for Nesting Components:
+
+app.component.html:
+===================
+<h3>I'm in the AppComponent</h3>
+<app-servers></app-servers>
+
+
+
+servers.component.html:
+=======================
+<h3> I'm in ServersComponent</h3>
+<app-server></app-server>
+<hr>
+<app-server></app-server>
+
+
+server.component.html:
+=======================
+
+<h1>Hello! This is server component</h1>
+

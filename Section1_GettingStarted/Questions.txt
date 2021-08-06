@@ -1,0 +1,7 @@
+1. How many ways we could generate Angular Projects ?
+A) One way is using Angular CLI.
+
+2. What is the default component ?
+
+3. How the changes will be automatically reloaded in Angular page ?
+

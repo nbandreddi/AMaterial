@@ -1,0 +1,1 @@
+The relative path or absolute URL of a template file for an Angular component. If provided, do not supply an inline template using template.

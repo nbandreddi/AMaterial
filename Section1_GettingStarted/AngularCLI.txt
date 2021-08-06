@@ -1,0 +1,93 @@
+6.Project Set up and First App
+
+Angular CLI
+###########	
+1. Before installing Angular CLI, we must ensure that our machine is having nodeJS installed in our machine.
+2. Once npm is available in your machine run the below commnad.
+	C:\> npm install -g @angular/cli@latest
+3. Above command gets the Angular CLI from npm repo & it installs in our mahcine.
+4. When we see the below statements menas Angular CLI installed in our machine.
+
+PS D:\AJPractice> npm install -g @angular/cli@latest
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+C:\Users\dell\AppData\Roaming\npm\ng -> C:\Users\dell\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+
+> @angular/cli@12.1.2 postinstall C:\Users\dell\AppData\Roaming\npm\node_modules\@angular\cli
+> node ./bin/postinstall/script.js
+
++ @angular/cli@12.1.2       
+updated 1 package in 13.578s
+
+5. Version may differ but general functionality will be same.
+
+6. Creating a new angular project. Just run the below command to create new project.
+D:\AJPractice> ng new my-first-project --no-strict
+
+7. When we excuted the above command in Windows OS we got the below exception.
+
+PS D:\AJPractice> ng new my-first-project --no-strict
+
+ng : File C:\Users\dell\AppData\Roaming\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system. For more information, 
+see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ ng new my-first-project --no-strict
++ ~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+	
+8. Resolved the above exception by running the below command in the VS Code terminal.
+D:\AJPractice> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+9. Now run the below command to create a new Angular project.
+D:\AJPractice> ng new my-first-project --no-strict
+
+Output of the above command:
+
+PS D:\AJPractice> ng new first-assignment --no-strict
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+CREATE first-assignment/angular.json (3011 bytes)
+CREATE first-assignment/package.json (1078 bytes)  
+CREATE first-assignment/README.md (1061 bytes)     
+CREATE first-assignment/tsconfig.json (538 bytes)  
+CREATE first-assignment/.editorconfig (274 bytes)  
+CREATE first-assignment/.gitignore (604 bytes)     
+CREATE first-assignment/.browserslistrc (703 bytes)
+CREATE first-assignment/karma.conf.js (1433 bytes)
+CREATE first-assignment/tsconfig.app.json (287 bytes)
+CREATE first-assignment/tsconfig.spec.json (333 bytes)
+CREATE first-assignment/src/favicon.ico (948 bytes)
+CREATE first-assignment/src/index.html (301 bytes)
+CREATE first-assignment/src/main.ts (372 bytes)
+CREATE first-assignment/src/polyfills.ts (2820 bytes)
+CREATE first-assignment/src/styles.css (80 bytes)
+CREATE first-assignment/src/test.ts (743 bytes)
+CREATE first-assignment/src/assets/.gitkeep (0 bytes)
+CREATE first-assignment/src/environments/environment.prod.ts (51 bytes)
+CREATE first-assignment/src/environments/environment.ts (658 bytes)
+CREATE first-assignment/src/app/app.module.ts (314 bytes)
+CREATE first-assignment/src/app/app.component.html (24585 bytes)
+CREATE first-assignment/src/app/app.component.spec.ts (986 bytes)
+CREATE first-assignment/src/app/app.component.ts (220 bytes)
+CREATE first-assignment/src/app/app.component.css (0 bytes)
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+PS D:\AJPractice>
+
+9. After new project got created, run the below command to deploy our application in the Angular development server.
+We will see the below statmenet after running the below command.
+D:\AJPractice> ng serve
+
+Build at: 2021-07-16T05:18:50.044Z - Hash: a1170166fa0776d1e5a7 - Time: 38833ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+√ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+5 unchanged chunks
+
+Build at: 2021-07-16T05:18:52.265Z - Hash: 671beb82fbfe6a510b93 - Time: 1481ms

@@ -1,0 +1,41 @@
+40) Applying CSS Classes Dynamically with 'ngClass'
+
+* We know that 'ngStyle' allows us to change the style dynamically.
+* 'ngClass' allows us to add or remove CSS classes dynamically.
+* We use property binding to configure 'ngClass' directive.
+* 'ngClass' property expects to get JS object.
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class= "form-control" [(ngModel)] = "userName"/>
+            <p>User Name:<b>{{userName}}</b></p>
+            <button class="btn btn-primary" [disabled]= "userName===''">Click Me</button>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="userName=''">Clear</button>
+            <br>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="serverName"/><br><br><br>
+            &nbsp;&nbsp;<button class="btn btn-primary" (click)="createServer()" [disabled]="serverName ===''">Create Server</button>
+            <br><br><br>
+            <p *ngIf="isServerCreated; else noServer" [ngClass]="{online:serverStatus==='Online'}"">
+                Server was created with Server name:{{serverName}} with the status:{{getServerStatus()}}</p>
+            <!-- <p *ngIf="!isServerCreated">Server not yet created..</p>
+             -->
+             <ng-template #noServer>
+                 <p>Server not created yet...</p>
+             </ng-template>
+        </div>
+    </div>
+</div>
+
+
+user.component.css
+==================
+.online{
+    background-color: rgb(121, 64, 64);
+}
+.offline{
+    background-color: indianred;
+}

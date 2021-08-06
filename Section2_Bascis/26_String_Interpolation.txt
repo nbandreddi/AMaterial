@@ -1,0 +1,6 @@
+26. String Interpolation
+
+* It is denoted with {{ }}
+* Generally we use property names as String interpolation
+* We could not use control statements for String interpolation.
+* We could use ternary operator for String interpolation.

@@ -1,0 +1,9 @@
+19. Using Custom Components
+
+* Open 'app.component.html', use the selector provided in the 'server.component.ts' file.
+
+Eg: app.component.html
+
+<h1> I'm in AppComponent </h1>
+<hr>
+<app-server></app-server>

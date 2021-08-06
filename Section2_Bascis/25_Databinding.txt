@@ -1,0 +1,25 @@
+25. What is Databinding ?
+
+* Databinding = Communication
+* Communication between TypeScript code (Business logic) & Template (HTML)
+* Business logic like fetch something from server finishing the calculations & displays that to user. Only thing user sees is template.
+* We need some kind of communication between both the pieces, 
+	i) TS code (Business logic) 
+	ii) Template (HTML)
+ to really do something in our app. That is where databinding comes into the picture because it is responsible for this communication.
+* If we want to output the data from TS code to HTML code. We could use below.
+	i) String Interpolation ( {{data}} )
+	ii) Property Binding ( [property] = "data" )
+	
+	TypeScript code (Business logic)    ------- Output Data --------->    Template (HTML)
+	
+* We know that template is the thing that user sees & also able to interact with template by typing the data, by clicking buttons.
+* For example, when user clicks a button, wants to trigger something in  the TS code.
+
+	TypeScript code (Business logic)    <------- React to (user) events ---------    Template (HTML)
+	
+* We could react to the User events with Event Binding ( (event) = "expression" )
+
+* We have an additional form of Databinding where we combine both the directions that is Two-way-Binding ( [(ngModel)] = "data" ). 
+Here we are able to react to events & output something at the same time.
+ 

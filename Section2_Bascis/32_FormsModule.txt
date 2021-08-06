@@ -1,0 +1,43 @@
+32) FormsModule:
+
+Important: FormsModule is Required for Two-Way-Binding!
+Important: For Two-Way-Binding (covered in the next lecture) to work, you need to enable the 'ngModel'  directive. This is done by adding the 'FormsModule'  to the imports[]  array in the 'AppModule'.
+
+You then also need to add the import from '@angular/forms'  in the 'app.module.ts' file:
+
+import { FormsModule } from '@angular/forms'; 
+
+
+* '@NgModule' : Decorator that marks a class as an NgModule and supplies configuration metadata.
+
+* '@NgModule' decorator supplies below configuration metadata.
+
+	- declarations
+	- imports
+	- providers
+	- bootstrap
+
+* 'app.module.ts' file has '@NgModule' decorator.
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { WarningComponent } from './warning/warning.component';
+import { SuccessComponent } from './success/success.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    WarningComponent,
+    SuccessComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

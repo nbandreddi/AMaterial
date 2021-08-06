@@ -1,0 +1,20 @@
+18. Understanding the role of AppModule & Component Declaration
+
+What is AppModule?
+
+* Angular uses components to build web pages.
+* Angular uses modules to bundle different pieces into packages.
+* For lot of projects, AppModule is enough.
+* For bigger projects,  splitting app into multiple app modules.
+* 'AppModule' uses a decorator called '@NgModule'.
+* '@NgModule' is imported from '@angular/core'.
+* '@NgModule' is has below properties:
+	- declarations
+	- imports
+	- providers
+	- bootstrap
+* If we don't configuer our new components, Angular doesn't know about our new components.
+* So we have to register our new components in the @NgModule.
+* We have to give entry of our new components in the 'declarations' section of '@NgModule' decorator.
+
+

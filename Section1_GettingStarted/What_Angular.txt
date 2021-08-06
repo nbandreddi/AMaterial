@@ -1,0 +1,19 @@
+*) What is angular ?
+Ans) Angular is a JavaScript framework which allows us to create reactive 'Single-Page-Applications (SPAs)'
+
+*) Angular Versiioning
+
+-- AngularJs (Angular1):
+	* It has some issues. Mainly performance related issues. It has bigger impact on large applications.
+	* Angular1 also referred to as AngularJs.
+	
+-- Angular2/ Angular :
+	* It's complete re-write of Angular1/AngularJs. It is like re-invention of angular1.
+	* It was released in 2016
+	* All the issues of Angular1 are fixed in Angular2.
+-- Angular3 was skipped for internal reasons.
+-- We have angular4, angular5, angular6, angular7, angular8, angular9
+-- New version getting released for every 6 months.
+-- Each version has small, incremental, backwards-compatible changes.
+-- We will see small improvements with every release.
+

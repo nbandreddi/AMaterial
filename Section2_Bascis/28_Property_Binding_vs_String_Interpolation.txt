@@ -1,0 +1,19 @@
+28. Property Binding vs String Interpolation
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <app-warning></app-warning>
+            <h2> {{ successMessage}}</h2>
+            <app-warning></app-warning>
+            <button class="btn btn-primary" [disabled] = "!enableClickButton">Click</button>
+			<p> {{ enableClickButton }} </p> <!-- here we are using String interpolation -->
+        </div>
+    </div>
+</div>
+
+* Above String interpolation could be replaced with property binding.
+
+	<p [innerText]="!enableClickButton"></p>
+	
+* Note: Don't mix property binding & string interpolation.
